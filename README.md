@@ -66,18 +66,19 @@ var munge = require('munge');
 exports.contact = function(req, res) {
   res.render('contact',
       {
-          title: 'Contact',
           emailContact: munge('spacemonkey@moon.com')
       }
   );
 };
 ```
 
-then you can show the munged email address on a jade template called contact.jade like this:
+then you can show the munged email address in a jade template called contact.jade with the lines like this inbetween:
 
 ``` js
+...
 p email:&nbsp;
     a(href!="mailto:#{emailContact}") !{emailContact}
+...
 ```
 
 make sure you use ! exactly like this as this won't escape the ampersand (&) into an html entity. see TJ's remark about escaped stuff at https://github.com/visionmedia/jade#code
