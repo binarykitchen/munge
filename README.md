@@ -4,7 +4,7 @@ ummm, just a tiny node module to munge any strings. useful if wou want to obfusc
 
 as long as spam robots are still dumb, this should significantly reduce the risk of the email address being harvested. i bet you get 60% less spam. this method is user friendlier and way easier to implement than other tricks like javascript or images. because you really can click on the link and it opens in your mail program.
 
-## simple example
+## basic example
 
 by default, munge() encodes each letter by random - either ascii or unicode - to make it more difficult for spammers.
 
@@ -13,7 +13,6 @@ because of the random generator the example below does not always produce the sa
 
 ``` js
 var munge = require('munge');
-
 console.log(munge('spacemonkey@moon.com'));
 ```
 
@@ -28,33 +27,31 @@ based on rfc1866, ftp://ftp.rfc-editor.org/in-notes/rfc1866.txt
 
 ## more examples
 
-### ascii encoding only
+### ascii
 
 ``` js
 var munge = require('munge');
-
 console.log(munge('spacemonkey@moon.com', {encoding: 'ascii'}));
 ```
 
-should output the string with ascii encodings like that:
+should encode the string with ascii like that:
 ```
 &#115;&#112;&#97;&#99;&#101;&#109;&#111;&#110;&#107;&#101;&#121;&#64;&#109;&#111;&#111;&#110;&#46;&#99;&#111;&#109;
 ```
 
-### utf8 encoding only
+### utf8
 
 ``` js
 var munge = require('munge');
-
 console.log(munge('spacemonkey@moon.com', {encoding: 'utf8'}));
 ```
 
-outputs the same blurb but in unicode:
+encodes the same blurb but in unicode:
 ```
 &#x0073;&#x0070;&#x0061;&#x0063;&#x0065;&#x006D;&#x006F;&#x006E;&#x006B;&#x0065;&#x0079;&#x0040;&#x006D;&#x006F;&#x006F;&#x006E;&#x002E;&#x0063;&#x006F;&#x006D;
 ```
 
-## jade integration
+### jade integration
 
 good idea. you will want to protect your email address on your contact page.
 
@@ -65,9 +62,9 @@ var munge = require('munge');
 
 exports.contact = function(req, res) {
   res.render('contact',
-      {
-          emailContact: munge('spacemonkey@moon.com')
-      }
+    {
+      emailContact: munge('spacemonkey@moon.com')
+    }
   );
 };
 ```
