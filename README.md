@@ -61,7 +61,7 @@ good idea. you will want to protect your email address on your contact page.
 here how you can do it within express and jade. let's say in express you have a route for a contact page (routes/contact.js) like this:
 
 ``` js
-var munge = require("../node_modules/munge");
+var munge = require('munge');
 
 exports.contact = function(req, res) {
   res.render('contact',
