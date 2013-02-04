@@ -2,11 +2,11 @@
 
 ummm, just a tiny node module to munge any strings. useful if wou want to obfuscate email addresses to valid, numeric html characters.
 
-as long as spam robots are still dumb, this should significantly reduce the risk of the email address being harvested. i bet you get 60% less spam and this method is even more user friendly and way easier to implement than other tricks like captcha. user friendly because you can click on the link and it opens in your mail program.
+as long as spam robots are still dumb, this should significantly reduce the risk of the email address being harvested. i bet you get 60% less spam. this method is user friendlier and way easier to implement than other tricks like javascript or images. because you really can click on the link and it opens in your mail program.
 
 ## simple example
 
-by default, munge() encodes each letter with a random encoding - either ascii or unicode - to make it more difficult for spammers.
+by default, munge() encodes each letter by random - either ascii or unicode - to make it more difficult for spammers.
 
 because of the random generator the example below does not always produce the same output:
 
