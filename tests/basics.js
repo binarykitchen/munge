@@ -31,7 +31,7 @@ module.exports = testCase({
         t.strictEqual(nothingMunged, '', 'empty parameter returns an empty string');
 
         t.throws(function() {
-            munge(new Object());
+            munge({});
         }, 'TypeError', 'first parameter as an object causes TypeError to be thrown.');
 
         t.throws(function() {

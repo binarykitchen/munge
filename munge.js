@@ -1,4 +1,4 @@
-'use strict';
+module.exports = munge;
 
 var encoder = {
 
@@ -37,7 +37,7 @@ var encoder = {
  * @return {String} the munged string
  * @api public
  */
-var munge = function(str, options) {
+function munge(str, options) {
 
     var aMunged = [];
     var aChars, i;
@@ -62,6 +62,4 @@ var munge = function(str, options) {
     }
 
     return aMunged.join('');
-};
-
-module.exports = munge;
+}
