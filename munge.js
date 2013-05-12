@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = munge;
 
 var encoder = {
