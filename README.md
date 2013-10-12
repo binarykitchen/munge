@@ -1,5 +1,7 @@
 # munge
 
+[![Build Status](https://travis-ci.org/binarykitchen/munge.png?branch=master)](https://travis-ci.org/binarykitchen/munge)
+
 ummm, just a tiny node module to munge any strings. useful if wou want to obfuscate email addresses to valid, numeric html characters.
 
 as long as spam robots are still dumb, this should significantly reduce the risk of the email address being harvested. i bet you get 60% less spam. this method is user friendlier and way easier to implement than other tricks like javascript or images. because you really can click on the link and it opens in your mail program.
