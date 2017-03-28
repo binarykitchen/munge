@@ -21,7 +21,7 @@ module.exports = testCase({
 
         t.ok(munge, 'munge module is loaded.');
         t.done()
-    },
+    },        
 
     'checking type munge.email': function(t) {
         t.ok(isFunction(munge), 'type of munge.email is a function.');

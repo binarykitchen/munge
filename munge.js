@@ -6,7 +6,7 @@ var encoder = {
     DEFAULT: 'random',
 
     ascii: function(str) {
-        return str.charCodeAt();
+        return str && str.charCodeAt();
     },
 
     utf8: function(str) {

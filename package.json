@@ -1,15 +1,15 @@
 {
     "name":         "munge",
-    "version":      "0.1.7",
+    "version":      "0.1.8",
     "description":  "a tiny node module to munge any strings. useful if you want to obfuscate email addresses to valid, numeric html entities.",
     "main":         "munge.js",
     "author":       "Michael Heuberger <michael.heuberger@binarykitchen.com>",
     "keywords":     ["munge", "email", "spam", "obfuscation", "ascii", "utf8"],
     "devDependencies": {
-        "nodeunit": "0.9.1"
+        "nodeunit": "0.11.0"
     },
     "engines": {
-        "node": ">=0.10.30"
+        "node": ">=4.2.0"
     },
     "scripts": {
         "test": "nodeunit tests/basics.js"
