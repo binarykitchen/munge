@@ -1,22 +1,42 @@
 {
-    "name":         "munge",
-    "version":      "0.1.8",
-    "description":  "a tiny node module to munge any strings. useful if you want to obfuscate email addresses to valid, numeric html entities.",
-    "main":         "munge.js",
-    "author":       "Michael Heuberger <michael.heuberger@binarykitchen.com>",
-    "keywords":     ["munge", "email", "spam", "obfuscation", "ascii", "utf8"],
-    "devDependencies": {
-        "nodeunit": "0.11.0"
-    },
-    "engines": {
-        "node": ">=4.2.0"
-    },
-    "scripts": {
-        "test": "nodeunit tests/basics.js"
-    },
-    "repository": {
-        "type": "git",
-        "url":  "https://github.com/binarykitchen/munge.git"
-    },
-    "license": "MIT"
+  "name": "munge",
+  "version": "0.2.0",
+  "description": "a tiny node module to munge any strings. useful if you want to obfuscate email addresses to valid, numeric html entities.",
+  "author": {
+    "name": "Michael Heuberger",
+    "email": "michael.heuberger@binarykitchen.com",
+    "url": "https://binarykitchen.com"
+  },
+  "source": "index.js",
+  "main": "dist/munge.js",
+  "module": "dist/munge.mjs",
+  "unpkg": "dist/munge.umd.js",
+  "scripts": {
+    "test": "nodeunit tests/basics.js",
+    "lint": "standard index.js",
+    "build": "microbundle"
+  },
+  "devDependencies": {
+    "microbundle": "0.11.0",
+    "nodeunit": "0.11.3",
+    "standard": "13.1.0"
+  },
+  "engines": {
+    "node": ">=8.10.0",
+    "yarn": ">=1.3.0",
+    "npm": ">=5.4.0"
+  },
+  "keywords": [
+    "munge",
+    "email",
+    "spam",
+    "obfuscation",
+    "ascii",
+    "utf8"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:binarykitchen/munge.git"
+  },
+  "license": "MIT"
 }
