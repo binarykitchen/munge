@@ -12,7 +12,7 @@ function isString (anything) {
 
 module.exports = testCase({
   'loading munge (require)': function (t) {
-    munge = require('../index.js')
+    munge = require('../src/index.js')
 
     t.ok(munge, 'munge module is loaded.')
     t.done()
@@ -67,7 +67,7 @@ module.exports = testCase({
 
     const mungedEmailAddress = munge(EMAIL_ADDRESS, { encoding: 'ascii' })
 
-    t.ok(mungedEmailAddress, 'ascii mungedd email address is not empty.')
+    t.ok(mungedEmailAddress, 'ascii munged email address is not empty.')
     t.ok(isString(mungedEmailAddress), 'ascii munged email address is a string.')
     t.strictEqual(mungedEmailAddress, MUNGED_EMAIL_ADDRESS, 'ascii munged email address is correct.')
 
@@ -85,5 +85,31 @@ module.exports = testCase({
     t.strictEqual(mungedEmailAddress, MUNGED_EMAIL_ADDRESS, 'utf8 munged email address is correct.')
 
     t.done()
-  }
+  },
+
+  'do not munge already munged ascii address': function (t) {
+    const MUNGED_EMAIL_ADDRESS = '&#115;&#112;&#97;&#99;&#101;&#109;&#111;&#110;&#107;&#101;&#121;&#64;&#109;&#111;&#111;&#110;&#46;&#99;&#111;&#109;'
+    const EMAIL_ADDRESS = MUNGED_EMAIL_ADDRESS
+
+    const mungedEmailAddress = munge(EMAIL_ADDRESS, { encoding: 'ascii' })
+
+    t.ok(mungedEmailAddress, 'ascii munged email address is not empty.')
+    t.ok(isString(mungedEmailAddress), 'ascii munged email address is a string.')
+    t.strictEqual(mungedEmailAddress, MUNGED_EMAIL_ADDRESS, 'ascii munged email address is correct.')
+
+    t.done()
+  },
+
+  'do not munge already munged UTF8 email address': function (t) {
+    const MUNGED_EMAIL_ADDRESS = '&#x0073;&#x0070;&#x0061;&#x0063;&#x0065;&#x006D;&#x006F;&#x006E;&#x006B;&#x0065;&#x0079;&#x0040;&#x006D;&#x006F;&#x006F;&#x006E;&#x002E;&#x0063;&#x006F;&#x006D;'
+    const EMAIL_ADDRESS = MUNGED_EMAIL_ADDRESS
+
+    const mungedEmailAddress = munge(EMAIL_ADDRESS, { encoding: 'utf8' })
+
+    t.ok(mungedEmailAddress, 'utf8 munged email address is not empty.')
+    t.ok(isString(mungedEmailAddress), 'utf8 munged email address is a string.')
+    t.strictEqual(mungedEmailAddress, MUNGED_EMAIL_ADDRESS, 'utf8 munged email address is correct.')
+
+    t.done()
+  },
 })
